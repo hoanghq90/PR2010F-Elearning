@@ -1,0 +1,9 @@
+class CreateQuestions < ActiveRecord::Migration[6.1]
+  def change
+      create_table :questions do |t|
+      t.string :title
+      t.integer :course_id, foreign_key: true
+      t.timestamps
+    end
+  end
+end
