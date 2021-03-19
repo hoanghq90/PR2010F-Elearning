@@ -1,0 +1,92 @@
+<div class="inner-body">
+  <h3>Settings</h3>
+  <%= link_to "Back", :back %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          User information
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div data-functional-selector="profile-image-empty" class="profile-image-input__ProfileImageBox-sc-170bzzs-0 fkxHJX">
+                <div class="css-1hwiqm">
+                  <span class="icon__Icon-xvsbpg-0 fpITzr" style="display: inline-block; vertical-align: middle; width: 32px; height: 32px;">
+                    <svg id="image" data-functional-selector="icon" viewBox="0 0 32 32" focusable="false" stroke="none" stroke-width="0"><path style="fill: rgb(110, 110, 110);" d="M25,6 C26.104,6 27,6.897 27,8 L27,8 L27,24 C27,25.103 26.104,26 25,26 L25,26 L7,26 C5.897,26 5,25.103 5,24 L5,24 L5,8 C5,6.897 5.897,6 7,6 L7,6 Z M25,8 L7,8 L7,24 L24.997,24 L24.999,14 L25,14 L25,8 Z M18,14 L22,20 L10,20 L13,16 L15,18 L18,14 Z M12,11 C13.104,11 14,11.894 14,13 C14,14.105 13.104,15 12,15 C10.895,15 10,14.105 10,13 C10,11.894 10.895,11 12,11 Z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="css-1hwiqm">Add picture</div></div>
+              </div>
+              <div class="col-md-8">
+
+                <div class="field">
+                  <%= f.label :name, class: 'form-label' %>
+                  <%= f.text_field :name,class: 'form-control',  autocomplete: "name" %>
+                </div>
+                <div class="field">
+                  <%= f.label :email, class: 'form-label' %>
+                  <%= f.email_field :email,class: 'form-control', autocomplete: "email" %>
+                </div>
+              </div>
+            </div>
+            <div class="css-179lkzd">Connect to Bitmoji</div>
+            <div class="row">
+              <div class="col-md-2">
+                <img src="../../assets/icedit.svg" width="46px"height="46px" style="margin-left: 12px">
+              </div>
+              <div class="col-md-10">
+                <span>Connect to Bitmoji to use it as your Kahoot! profile picture and add a personal touch to your experience.<a class="user-info-section__SectionLink-gay60e-3 csINrF">Connect to Bitmoji</a></span>
+              </div>
+            </div>
+            <div class="css-179lkzd">Verified educator</div>
+            <div class="row">
+              <div class="col-md-2">
+                <img src="../../assets/user.svg" width="46px"height="46px" style="margin-left: 12px">
+              </div>
+              <div class="col-md-10">
+                <span>Your application to become a Verified educator on Kahoot! Academy is saved as a draft. Complete!<a class="user-info-section__SectionLink-gay60e-3 csINrF">Complete application</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Account details
+          </div>
+          <div class="card-body">
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+            <div class="col">
+              <div class="field">
+                <%= f.label :password,class: 'form-label' %> <i>(leave blank if you don't want to change it)</i><br />
+                <%= f.password_field :password, autocomplete: "new-password" ,class: 'form-control'%>
+                <% if @minimum_password_length %>
+                <% end %>
+              </div>
+              <div class="field">
+                <%= f.label :password_confirmation,class: 'form-label' %>
+                <%= f.password_field :password_confirmation,class: 'form-control', autocomplete: "new-password" %>
+              </div>
+              <div class="field">
+                <%= f.label :current_password,class: 'form-label' %> <i>(we need your current password to confirm your changes)</i>
+                <%= f.password_field :current_password,class: 'form-control', autocomplete: "current-password" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "Update", class:"btn btn-secondary btn-block" %>
+              </div>
+            </div>
+            <div class="css-179lkzdr"><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, style:"color: red;" %></div>
+            <span style="padding-left: 20px;">If you do this, you will lose access to all the kahoots you created.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
