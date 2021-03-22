@@ -2,15 +2,21 @@
 <html>
   <head>
     <title>ELS</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="shortcut icon" sizes="76x76" type="image/x-icon" href="../../assets/kahoot.ico">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <%= render 'layouts/header' %>
+  <div class="body">
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
-  </body>
+  </div>
+  <%= render 'layouts/footer' %>
+</body>
 </html>
