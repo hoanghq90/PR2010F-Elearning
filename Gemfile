@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.7'
 gem "devise"
 gem "omniauth", "~> 1.9.1"
 gem "omniauth-facebook"
+gem 'cancancan'
+gem 'rails_admin'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
