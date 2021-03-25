@@ -27,7 +27,7 @@
                 <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %></td>
               </div>
               <div class="card-body">
-              <%= link_to "View", category_path(category.id), class: "btn btn-primary" %>
+              <%= link_to "View", courses_path(:cate => category.id), class: "btn btn-primary" %>
               <%= link_to image_tag("B.jpg", width: "200px") %>
               </div>
             </div>
