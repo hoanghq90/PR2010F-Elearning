@@ -6,7 +6,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   if @student.persisted?
     sign_in_and_redirect @student, event: :authentication # this will throw if @student is not activated
     set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
-    flash[:success] = "Welcome #{@student.name}!"
   else
     session["devise.facebook_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
     redirect_to new_student_registration_url

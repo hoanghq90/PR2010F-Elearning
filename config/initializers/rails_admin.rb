@@ -1,5 +1,8 @@
 RailsAdmin.config do |config|
 
+  config.authenticate_with do
+   warden.authenticate! scope: :student
+ end
   ### Popular gems integration
 
   ## == Devise ==

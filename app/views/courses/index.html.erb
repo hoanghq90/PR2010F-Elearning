@@ -1,4 +1,3 @@
-<div class="container">
   <div calss="d-lex flex-row justify-content-content">
     <span> <%= link_to "All Course", courses_path %> </span><br>
     <% @categories.each do |category| %>
@@ -17,5 +16,5 @@
       <div class="course-index">
         <%= render @courses %>
       </div>
+      <%= will_paginate @courses, list_classes: %w(pagination justify-content-end) , class:'paginate'%>
     </div>
-  </div>
