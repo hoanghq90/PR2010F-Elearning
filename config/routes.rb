@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'students/show'
   devise_for :students, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :students, only: [:show]
@@ -7,4 +7,12 @@ Rails.application.routes.draw do
   resources :categories
   resources :tests
   root 'static_pages#index'
+
+  namespace :admin do
+    get '/index', to: 'static_pages#index'
+    # resources :static_pages
+    resources :categories
+    resources :questions
+  end
+
 end
