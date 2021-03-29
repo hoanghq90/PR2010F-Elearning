@@ -12,7 +12,16 @@
           <div class="uton">
             <div class="ull1">
               <div class="btn-area"><a class="btna" href="#">News</a></div>
-              <div class="item3"><a href="#">School</a></div>
+              <div class="item3">
+                <%= link_to courses_path  do%>
+                <span class="icon__Icon-xvsbpg-0 fpITzr top-bar-link__Icon-sc-1pt35me-0 eMLSWu" style="display: inline-block; vertical-align: middle; width: 32px; height: 32px;">
+                  <svg id="discover" data-functional-selector="icon" viewBox="0 0 32 32" focusable="false" stroke="none" stroke-width="0">
+                    <path style="fill: rgb(51, 51, 51);" d="M16,6 C21.528,6 26.001,10.475 26,16 C26,21.528 21.525,26 16,26 C10.472,26 6,21.526 6,16 C5.999,10.473 10.475,6 16,6 Z M8,16 C8,18.096 8.805,20.067 10.262,21.568 L13.088,13.088 L21.567,10.262 C20.067,8.805 18.097,8 16,8 C13.863,8 11.854,8.832 10.343,10.343 C8.832,11.854 8,13.863 8,16 Z M14.669,14.669 L13.338,18.663 L17.33,17.332 L14.669,14.669 Z M16,24 C20.422,24 24,20.422 24,16 C24,13.904 23.195,11.933 21.738,10.432 L18.912,18.912 L10.434,21.739 C11.934,23.195 13.904,24 16,24 Z"></path>
+                  </svg>
+                </span>
+                Discover
+                <%end%>
+              </div>
               <div class="item3"><a href="#">Work</a></div>
               <div class="item3"><a href="#">Home</a></div>
               <div class="item3"><a href="#">Academy</a></div>
@@ -21,13 +30,27 @@
             </div>
             <div class="ull3">
               <% if current_student%>
-              <div class="item3"><a href="#">Play</a></div>
+              <div class="item3"><a class="SoD" href="#">Play</a></div>
               <div class="btn-group">
                 <div class="facc" -acc data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <div class="acc1" aria-label="Menu điều hướng chính"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg></div>
-                  <div class="acc2"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 30px; width: 30px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
-                    <div class="_hnk65xp" aria-label="1 thông báo">..</div>
+                  <div class="acc1" aria-label="Menu điều hướng chính">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3px; overflow: visible;" aria-hidden="true" role="presentation" focusable="false">
+                      <g fill="none" fill-rule="nonzero">
+                      <path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
+                    </svg>
                   </div>
+                  <div class="frame-image">
+                    <% if current_student.avatar.attached? %>
+                    <%= image_tag current_student.avatar_thumbnail,class:"imageee"%>
+                    <% else %>
+                    <div class="acc2"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 30px; width: 30px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                      <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
+                    </div>
+                    <% end %>
+                  </div>
+                  <span class="nemu">
+                    <%= current_student.name %>
+                  </span>
                 </div>
                 <div class="dropdown-menu dropdown-menu-right">
                   <section class=".dfGsjX">
@@ -58,7 +81,7 @@
               </div>
               <%else%>
               <div class="item3"><%= link_to 'Sign up',new_student_registration_path%></div>
-              <div class="btn-area"  data-toggle="modal" data-target="#myModal">Log in</div>
+              <div class="ghnSPz"  data-toggle="modal" data-target="#myModal">Log in</div>
               <%end%>
             </div>
           </div>
@@ -66,37 +89,37 @@
         <div class="modal fade" id="myModal" role="dialog"  tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
-                  <div class="h-form">
-                    <span class="t3hf0m">Log in</span>
-                  </div>
-                  <div class="bd-form">
-                    <div class="form-login">
-                      <div class="form">
-                        <%= form_for(resource_name, as: resource_name, url: session_path(resource_name)) do |f| %>
-                        <div class="fi">
-                          <%= f.label :"Username or email" , class: 'form-label' %>
-                          <%= f.email_field :email,class: 'form-control', autocomplete: "email" %>
-                        </div>
-                        <div class="fi">
-                          <%= f.label :Password , class: 'form-label'%>
-                          <%= f.password_field :password,class:'form-control' ,autocomplete: "current-password" %>
-                        </div>
-                        <% if devise_mapping.rememberable? %>
-                        <div class="fi">
-                          <%= f.check_box :remember_me %>
-                          <%= f.label :remember_me %>
-                        </div>
-                        <% end %>
-                        <div class="actions">
-                          <%= f.submit "Log in", class: "_button" %>
-                        </div>
-                        <% end %>
-                        <%= render "devise/shared/links" %>
-                      </div>
+              <div class="h-form">
+                <span class="t3hf0m">Log in</span>
+              </div>
+              <div class="bd-form">
+                <div class="form-login">
+                  <div class="form">
+                    <%= form_for(resource_name, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="fi">
+                      <%= f.label :"Username or email" , class: 'form-label' %>
+                      <%= f.email_field :email,class: 'form-control', autocomplete: "email" %>
                     </div>
+                    <div class="fi">
+                      <%= f.label :Password , class: 'form-label'%>
+                      <%= f.password_field :password,class:'form-control' ,autocomplete: "current-password" %>
+                    </div>
+                    <% if devise_mapping.rememberable? %>
+                    <div class="fi">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
+                    <% end %>
+                    <div class="actions">
+                      <%= f.submit "Log in", class: "_button" %>
+                    </div>
+                    <% end %>
+                    <%= render "devise/shared/links" %>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
-</nav>
+      </div>
+    </nav>

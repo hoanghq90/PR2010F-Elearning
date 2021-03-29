@@ -203,7 +203,7 @@
 .col4{
   flex: 0 0 33.3333%;
   max-width: 33.3333%;
-  margin: 16px 0;
+  margin: 16px 0 16px 8px;
   background:#d7e9f9;
   overflow: hidden;
   display: flex;
@@ -315,4 +315,37 @@
 }
 .pagination{
   margin-right: 16px;
+}
+.quantity{
+  display: flex;
+}
+.oinput{
+  margin: auto 8px;
+}
+.add{
+  margin: 2px auto;
+  font-size: 25px;
+  font-weight: 700;
+}
+.sub{
+  margin: 2px auto;
+  font-size: 25px;
+  font-weight: 700;
+
+}
+.add :hover{
+  background-color: #2980b9;
+}
+.sub :hover{
+  background-color: #2980b9;
+}
+
+.bora{
+  width: 40px;
+  height: 40px;
+  border-color: #17a2b8 !important;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: #fff;
+  outline: none;
 }

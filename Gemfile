@@ -19,6 +19,7 @@ gem 'cancancan'
 gem 'rails_admin'
 gem 'will_paginate-bootstrap4'
 
+gem 'image_processing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap-sass'

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :students, only: [:show]
   resources :courses
   resources :categories
+  resources :tests
   root 'static_pages#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
