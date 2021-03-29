@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
      if params[:cate]
        category = Category.find_by id:  params[:cate]
          if category.present?
-           @courses = category.courses
+           @courses = category.courses.paginate(page: params[:page]).per_page(4)
          else
            flash[:success] = "Category doesn't exist"
            redirect_to categories_path

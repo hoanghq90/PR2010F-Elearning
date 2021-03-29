@@ -16,7 +16,7 @@ gem "devise"
 gem "omniauth", "~> 1.9.1"
 gem "omniauth-facebook"
 gem 'cancancan'
-gem 'rails_admin'
+# gem 'rails_admin'
 gem 'will_paginate-bootstrap4'
 
 gem 'image_processing'

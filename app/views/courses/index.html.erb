@@ -1,8 +1,11 @@
   <div calss="d-lex flex-row justify-content-content">
     <span> <%= link_to "All Course", courses_path %> </span><br>
-    <% @categories.each do |category| %>
-    <%= link_to category.category, courses_path(:cate => category.id) %>
-    <% end %>
+    <div class="category_cha">
+      <% @categories.each do |category| %>
+      <%= link_to category.category, courses_path(:cate => category.id) ,class: "btn-con"%>
+      <% end %>
+    </div>
+
     <div class="inner-body">
       <div class="ciFKmO">
         <div class="contain">
